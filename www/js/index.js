@@ -1,12 +1,13 @@
-var pagelist = [],
-    pageidlist = [],
-    pagetextcontent = [],
-    staticlist = [];
-            
+var app = {
+    pagelist : [],
+    pageidlist : [],
+    pagetextcontent : [],
+    staticlist : []
+
+}
 
 $(function(){
-
-    
+   
    
 ///////////////////Ajax jsonp function to get data from json file////////////////
 		
@@ -66,6 +67,7 @@ jsonTitles(function(content){
     
     
     
+    
 ///////////////////Assigning Titles from json array//////////////////////
     
     
@@ -81,10 +83,11 @@ jsonTitles(function(content){
                         pagetitle = $(this).attr('title'),
                         pagecontent = $(this).attr('content');
             
-                        pagelist.push(pagetitle);
-                        pageidlist.push(pageid);
-                        pagetextcontent.push(pagecontent);
-                        staticlist.push(pageid);
+                        app.pagelist.push(pagetitle);
+                        /*testArray.push(pagetitle);*/
+                        app.pageidlist.push(pageid);
+                        app.pagetextcontent.push(pagecontent);
+                        app.staticlist.push(pageid);
             
 ////////////////////Create List navigation in left panel on home page///////////////////////
             
@@ -132,17 +135,17 @@ jsonTitles(function(content){
     
 ////////////////////Re-arranging the arrays for static text content i.e removing 'transfer list' and 'news' sections/////////////////////
     
-    staticlist.splice(0, 2);
-    staticlist.pop();
+    app.staticlist.splice(0, 2);
+    app.staticlist.pop();
     
-    pagetextcontent.splice(0, 2);
-    pagetextcontent.pop();
+    app.pagetextcontent.splice(0, 2);
+    app.pagetextcontent.pop();
     
 ////////////////////Add static text content to static pages/////////////////////
     
-    $(staticlist).each(function(i){
-        var pagename = staticlist[i],
-            pagetext = pagetextcontent[i];
+    $(app.staticlist).each(function(i){
+        var pagename = app.staticlist[i],
+            pagetext = app.pagetextcontent[i];
            
            $('#' + pagename + 'Content').html('<img class="static-image" src="images/content/' + pagename + '.png"/><p>' + pagetext + '</p>');
                
@@ -157,7 +160,6 @@ jsonTitles(function(content){
            
     });///End jsonTitles Function///
     
-
     
 });///End jQuery Function///
 
@@ -208,6 +210,8 @@ window.open('https://www.facebook.com/pages/PFAIOfficial/137333183069003');
 ////////////////////Delay for dynamic content//////////////////////////
 
 setTimeout(function(){
+    
+/*$(document).on('pageinit', '#maps', functon(){*/
     
 ////////////////////Create empty table for dynamic transfer listed player//////////////////////////
     
@@ -374,13 +378,14 @@ setTimeout(function(){
         });
         
 //////////////////Create left panel list from gloabl page array, in individual news pages//////////////////
+/*console.log($testArray);*/
         
-$(pagelist).each(function(i){
+$(app.pagelist).each(function(i){
            
             $('[data-role="panel"] ul:not(#homeList)').append(
                         $('<li />', {
                             'data-theme': 'c'
-                        }).html('<a href="#' + pageidlist[i] +'"><span class="icon-' + pageidlist[i] + '">' + this + '</span></a>'));
+                        }).html('<a href="#' + app.pageidlist[i] +'"><span class="icon-' + app.pageidlist[i] + '">' + this + '</span></a>'));
                
     });
         
@@ -390,6 +395,8 @@ $(pagelist).each(function(i){
     newspage.attr('class', 'app');
         
     });
+    
+/*});*/
 
 },4000);
 
