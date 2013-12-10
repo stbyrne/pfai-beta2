@@ -91,7 +91,7 @@ jsonTitles(function(content){
         homeList.append(
             $('<li />', {
                 'data-theme': 'c'
-            }).html('<a href="#' + pageid + '"><span>' + pagetitle + '</span></a>')).listview('refresh');
+            }).html('<a href="#' + pageid + '"><span class="icon-' + pageid + '">' + pagetitle + '</span></a>')).listview('refresh');
             
             
 ///////////////////Creates the individual pages for each section////////////////

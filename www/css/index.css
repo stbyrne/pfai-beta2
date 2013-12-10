@@ -57,6 +57,12 @@
     margin: -.2em 4px;
     /*position: relative;*/
 }
+
+/*Change side-panel color*/
+/*.ui-panel{
+    background: #fff !important;   
+}*/
+
 /*Icons*/
 
 .icon-transferlist, .icon-news, .icon-membership, .icon-coaching, .icon-health, .icon-career, .icon-antidoping, .icon-tax, .icon-transfer, .icon-betting, .icon-agency, .icon-maps{
@@ -232,7 +238,9 @@ tbody{
 }
 #left-panel p{
     font: 1.6em Helvetica, Calibri, Arial, Verdana, sans-serif;
-    color: rgba(0, 185, 50, 0.85);
+    color: rgba(0, 170, 50, 0.85);
+    font-weight: 300;
+    text-shadow: none;
 }
 
 .ui-collapsible-heading .ui-btn-text {
