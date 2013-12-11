@@ -7,6 +7,7 @@ var app = {
 }
 
 $(function(){
+
    
    
 ///////////////////Ajax jsonp function to get data from json file////////////////
@@ -209,7 +210,7 @@ window.open('https://www.facebook.com/pages/PFAIOfficial/137333183069003');
 
    
 
-////////////////////Delay for dynamic content//////////////////////////
+////////////////////Build transfer list/news pages on successful ajax request//////////////////////////
 
 /*setTimeout(function(){*/
     
@@ -325,6 +326,7 @@ function initiateList(){
             var articleNum = i + 1,
                 $body = $('body'),
                 $articleid = $(this)[0].article_id,
+                $articledate = $(this)[0].article_date,
                 $headline = $(this)[0].article_headline,
                 $image = $(this)[0].article_image,
                 $caption = $(this)[0].article_caption,
@@ -336,7 +338,7 @@ function initiateList(){
                             /*'data-theme': 'c',*/
                             'data-icon': 'false',
                             'class': 'ui-icon-alt ui-icon-nodisc'
-                        }).html('<a href="#' + $articleid + '"><img src="images/news/' + $image + '"><h2>' + $headline + '</h2><p>' + $text +'</p><p class="ui-li-aside">more...</p></a>'));
+                        }).html('<a href="#' + $articleid + '"><img src="images/news/' + $image + '"><h2>' + $headline + '</h2><p>' + $text +'</p><p class="ui-li-aside">' + $articledate + '</p></a>'));
     
 
                 console.log($articleid);
@@ -349,13 +351,13 @@ function initiateList(){
                             'data-position': 'fixed',
                             id: $articleid + 'header',
                             'data-theme': 'c'
-                        }).html('<a href="#left-panel" id="menuNav" class="ui-nodisc-icon" data-role="none"><img src="images/nav_g.png"/>Menu</a><h1 id="sectionTitle">Latest News</h1><h2 id="subTitle">'+ $headline +'</h2><a href="#home" id="homeNav" class="ui-icon-nodisc" data-role="none">Home</a>')).each(function(){
+                        }).html('<a href="#left-panel" id="menuNav" class="ui-nodisc-icon" data-role="none"><img src="images/nav_g.png"/>Menu</a><h1 id="sectionTitle">Latest News</h1><a href="#home" id="homeNav" class="ui-icon-nodisc" data-role="none">Home</a>')).each(function(){
                         
                             $(this).append($('<div />', {
                                 'data-role': 'content',
                                 'id': $articleid + 'Content',
                                 'class': 'feature'
-                            }).html('<img src="images/news/'+ $image +'"/><p>'+ $text +'</p>')).append($('<div />', {
+                            }).html('<h2 class="article-headline">' + $headline + '</h2><p class="article-caption">' + $caption + '</p><img src="images/news/'+ $image +'"/><span class="article-date">' + $articledate + '</span><p>'+ $text +'</p>')).append($('<div />', {
                                     'data-role': 'panel',
                                     'class': 'ui-icon-alt',
                                     id: 'left-panel'

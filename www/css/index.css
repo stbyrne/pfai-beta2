@@ -219,7 +219,8 @@ tbody{
 }
 
 #sectionTitle{
-    font: bold 1em Helvetica, Calibri, Arial, Verdana, sans-serif !important;
+    font: 1em Helvetica, Calibri, Arial, Verdana, sans-serif !important;
+    font-weight: 600 !important;
     text-overflow: ellipsis !important;
     padding: 0 !important;
     margin: 10px auto!important;
@@ -241,10 +242,11 @@ tbody{
     color: rgba(0, 170, 50, 0.85);
     font-weight: 300;
     text-shadow: none;
+    margin: 15px auto;
 }
 
 .ui-collapsible-heading .ui-btn-text {
-    font: .6em Calibri, Arial, Verdana, sans-serif !important;      
+    font: .6em Helvetica, Calibri, Arial, Verdana, sans-serif !important;      
 }
 .media{
     width: 100%;
@@ -275,13 +277,13 @@ tbody{
 }*/
 span{
 	white-space: normal;
-    font: bold 1.1em Calibri, Arial, Verdana, sans-serif;
+    font: bold 1.1em Helvetica, Calibri, Arial, Verdana, sans-serif;
 }
 
 .lesson .ui-btn-text .ui-li-desc {
     padding-top: .4em;
     padding-left: .5em;
-	font: .9em Calibri, Arial, Verdana, sans-serif;
+	font: .9em Helvetica, Calibri, Arial, Verdana, sans-serif;
     white-space: normal;
 }
 
@@ -296,12 +298,16 @@ span{
 .ui-header .ui-title{
 	/*text-align: left !important;*/
 	/*min-height: 2.5em;*/
-	font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
+	font: bold 1em Helvetica, Calibri, Arial, Verdana, sans-serif !important;
     /*padding-right: .2em !important;*/
 	padding-left: 1em !important;
 	margin: .6em 2.5em !important;
 	text-overflow: ellipsis !important;
 }
+/*.ui-header span{
+    font: 0.6em Helvetica, Calibri, Arial, Verdana, sans-serif !important; 
+    color: rgba(0, 170, 50, 0.85);
+}*/
 #logButton, #menuButton{
     zoom: 1;   
 }
@@ -315,11 +321,27 @@ span{
 /*News Pages*/
 
 .feature img{
-    width: 50%;
+    width: 100%;
     display: block;
     position: relative;
-    margin: 10px auto 10px;
+    margin: 5px auto 10px;
     -webkit-box-shadow: 0 0 5px rgba(111, 111, 111, 0.85);
+}
+.feature .article-headline{
+    margin-top: 0;
+    text-align: center;
+    font-weight: 300;
+    text-shadow: none;   
+}
+.feature .article-date{
+    color: rgba(0, 170, 50, 0.85);
+    font-size: 0.6em;
+    
+}
+.feature .article-caption{
+    font-size: 0.6em;
+    text-align: center;
+    margin: 0 auto;
 }
 /*.feature p{
     font: 1em Calibri, Arial, Verdana, sans-serif !important;
@@ -345,7 +367,7 @@ span{
     background: -webkit-linear-gradient(top, #fcfcfc, #ededed) !important;   
 }
 h1, h2, h3, h4, h5, h6, p{
-    font-family: Calibri, Arial, Verdana, sans-serif !important;
+    font-family: Helvetica, Calibri, Arial, Verdana, sans-serif !important;
 }
 span .ui-icon .ui-icon-plus{
     zoom: .6;   
