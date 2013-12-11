@@ -23,6 +23,7 @@ function jsonTitles(holdData){
         success: function(data) {
             console.log(data);
             holdData(data);
+            initiateList();
             
         },
         error: function() {
@@ -37,10 +38,11 @@ function jsonTitles(holdData){
                 success: function(data) {
                     console.log(data);
                     holdData(data);
+                    initiateList();
                     
                 },
                 error: function() {
-                    alert('Error');
+                    alert('Error loading. Please re-open the app.');
                 }
                 
             });
@@ -209,9 +211,9 @@ window.open('https://www.facebook.com/pages/PFAIOfficial/137333183069003');
 
 ////////////////////Delay for dynamic content//////////////////////////
 
-setTimeout(function(){
+/*setTimeout(function(){*/
     
-/*$(document).on('pageinit', '#maps', functon(){*/
+function initiateList(){
     
 ////////////////////Create empty table for dynamic transfer listed player//////////////////////////
     
@@ -396,9 +398,9 @@ $(app.pagelist).each(function(i){
         
     });
     
-/*});*/
+}
 
-},4000);
+/*},4000);*/
 
 
 //////////////////////Initiate Maps///////////////////
