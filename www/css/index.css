@@ -57,6 +57,15 @@
     margin: -.2em 4px;
     /*position: relative;*/
 }
+.ui-body-c, .ui-overlay-c {
+background: #fdfdfd;
+background-image: -webkit-gradient(linear, left top, left bottom, from( #fafafa ), to( #fff ));
+background-image: -webkit-linear-gradient( #fff , #fafafa );
+background-image: -moz-linear-gradient( #fff , #fafafa );
+background-image: -ms-linear-gradient( #fff , #fafafa );
+background-image: -o-linear-gradient( #fff , #fafafa );
+background-image: linear-gradient( #fff , #fafafa );
+}
 
 /*Change side-panel color*/
 /*.ui-panel{
@@ -151,7 +160,7 @@
     position: fixed;
     z-index: 100;
 }
-#com a{
+#com div:nth-child(n) a{
     display: -webkit-box;
     display: -moz-box;
     display: -o-box;
@@ -177,13 +186,13 @@
     -ms-box-shadow: inset 0 0 8px rgba(180, 180, 180, 0.6);
     box-shadow: inset 0 0 3px rgba(137, 137, 137, 0.6);
 }
-#com a span{
+#com div:nth-child(n) a span{
     font: .6em Calibri, Arial, Verdana, sans-serif;
     text-decoration: none;
     text-shadow: none;
     margin: 8px;
 }
-#com a img{
+#com div:nth-child(n) a img{
     margin: 10px 20% 0;
     max-height: 40%;
 }
@@ -320,7 +329,7 @@ span{
 
 /*News Pages*/
 
-.feature img{
+.feature img, .static-image{
     width: 100%;
     display: block;
     position: relative;
@@ -330,19 +339,24 @@ span{
 .feature .article-headline{
     margin-top: 0;
     text-align: center;
+    font-size: 1.2em;
     font-weight: 300;
     text-shadow: none;   
 }
 .feature .article-date{
     color: rgba(0, 170, 50, 0.85);
-    font-size: 0.6em;
-    
+    font-size: 0.7em;
+    font-weight: 100;
 }
 .feature .article-caption{
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align: center;
     margin: 0 auto;
 }
+.feature p, .ui-content p{
+        font-size: .8em;
+        font-weight: 100;
+    }
 /*.feature p{
     font: 1em Calibri, Arial, Verdana, sans-serif !important;
 }*/
@@ -380,10 +394,10 @@ span .ui-icon .ui-icon-plus{
     padding: .2em;
     
 }
-.static-image{
+/*.static-image{
     width: 200px;
     margin: 0 auto;
-}
+}*/
 
 #log * {
     -webkit-user-select: none;
@@ -429,6 +443,35 @@ span .ui-icon .ui-icon-plus{
 /* Second breakpoint is 45em (720px). */
 @media ( min-width: 45em ) {
     
+    .feature img, .static-image{
+    max-width: 60%;
+    
+    }
+    .feature .article-headline{
+        font-size: 1.6em;  
+    }
+    .feature .article-date{
+        font-size: .8em;
+        
+    }
+    .feature .article-caption{
+        font-size: 1em;
+    }
+    .feature p, .ui-content p{
+        font-size: 1em;
+    }
+    
+    #sectionTitle{
+        font-size: 1.4em!important;   
+    }
+    #subTitle{
+        font-size: 1.2em !important;
+        /*font-weight: 300;*/
+    }
+    .ui-header{
+        height: 80px;  
+    }
+    
     #menuNav, #homeNav, #helpNav{
     text-decoration: none;
     font-size: 1.4em;
@@ -447,16 +490,17 @@ span .ui-icon .ui-icon-plus{
     #com{
     height: 90px;
     }
-    #com a{
+    #com div:nth-child(n) a{
     height: 90px;
     }
-    #com a img{
+    #com div:nth-child(n) a img{
         margin-top: 10px;
         max-width: 50%;
     }
-    #com a span{
+    #com div:nth-child(n) a span{
     font-size: .8em;
     }
+
 }
 
 
@@ -464,19 +508,39 @@ span .ui-icon .ui-icon-plus{
 @media ( min-width: 48em ) {
     
     /* Communications footer on homepage*/
+    #call{
+        display: none;   
+    }
+    
     #com{
-        height: 110px;   
+        height: 110px; 
+        
     }
-    #com a{
-        height: 110px;   
+    #com div:nth-child(n) a{
+        height: 110px;
+        width: 33.3%;
     }
-    #com a img{
+    #com div:nth-child(n) a img{
         margin-top: 15px;
         max-width: 60%;
     }
-    #com a span{
+    #com div:nth-child(n) a span{
     font-size: 1em;
     }
+    .feature .article-headline{
+        font-size: 1.8em;  
+    }
+    .feature .article-date{
+        font-size: 1em;
+        
+    }
+    .feature .article-caption{
+        font-size: 1.2em;
+    }
+    .feature p, .ui-content p{
+        font-size: 1.2em;
+    }
+    
     #menuNav, #homeNav, #helpNav{
     font-size: 1.6em;
     }
@@ -503,10 +567,11 @@ span .ui-icon .ui-icon-plus{
     }
     
     #sectionTitle{
-        font-size: 2em !important;
+        font-size: 1.6em !important;
     }
     #subTitle{
         font-size: 1.4em !important;
+        /*font-weight: 300;*/
     }
     
     
@@ -643,8 +708,56 @@ span .ui-icon .ui-icon-plus{
         -ms-transition: all 500ms ease;
         transition: all 500ms ease;
     }
+
+        /*Icons*/
+
+    .icon-transferlist, .icon-news, .icon-membership, .icon-coaching, .icon-health, .icon-career, .icon-antidoping, .icon-tax, .icon-transfer, .icon-betting, .icon-agency, .icon-maps{
+    background-image: url('../images/list-icons/list-icons.png');
+    background-repeat: no-repeat;
+    background-size: 23px;
+    padding-left: 23px;
+    
+    }
+    .icon-transferlist{
+       background-position: 0 0;    
+    }
+    .icon-news{
+        background-position: 0 -23px;
+           
+    }
+    .icon-membership{
+        background-position: 0 -46px;
+      
+    }
+    .icon-coaching{
+        background-position: 0 -69px;
+    }
+    .icon-health{
+        background-position: 0 -92px;
+    }
+    .icon-career{
+        background-position: 0 -115px;
+    }
+    .icon-antidoping{
+        background-position: 0 -138px;
+    }
+    .icon-tax{
+        background-position: 0 -161px;
+    }
+    .icon-transfer{
+        background-position: 0 -184px;
+    }
+    .icon-betting{
+        background-position: 0 -207px;
+    }
+    .icon-agency{
+        background-position: 0 -230px;
+    }
+    .icon-maps{
+        background-position: 0 -253px;
+    }
 }
-/* Thrid breakpoint. 4 column layout. Tiles will be 250x250 pixels again at the breakpoint. */
+/* Fourth breakpoint. 4 column layout. Tiles will be 250x250 pixels again at the breakpoint. */
 @media all and (min-width: 1020px){
     .app .ui-content {
         padding: 10px;
