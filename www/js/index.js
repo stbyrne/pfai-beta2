@@ -192,19 +192,19 @@ jsonTitles(function(content){
 
 /////////////Apply click events to communication buttons on homepage//////////////
 
-$('#mail').on('click', function(){
+$('#mail a').on('click', function(){
     $(this).attr('href', 'mailto:info@pfai.ie');
     });
 
-$('#call').on('click', function(){
+$('#call a').on('click', function(){
     $(this).attr('href', 'tel:0035318999350');
     });
 
-$('#twitter').on('click', function(){
+$('#twitter a').on('click', function(){
 window.open('https://twitter.com/PFAIOfficial');
     });
 
-$('#face').on('click', function(){
+$('#face a').on('click', function(){
 window.open('https://www.facebook.com/pages/PFAIOfficial/137333183069003');
     });
 
